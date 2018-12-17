@@ -1,0 +1,17 @@
+.Login {
+    text-align: center;
+}
+
+
+.Login-header{
+    background: url(background-gradient.png) no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    background-size: cover;
+
+}
