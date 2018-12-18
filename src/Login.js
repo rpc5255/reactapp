@@ -9,10 +9,14 @@ class Login extends Component {
     render() {
         return (
             <div className="Login">
-                <header className="Login-header"></header>
+                    <div className="container">
+                        <h4>Sign In</h4>
+                    </div>
             </div>
         );
     }
 }
 
+
 export default Login;
+
