@@ -15,9 +15,48 @@
 
 .container{
     border-radius: 25px;
-    align-items: center;
     width: 50vh;
     height: 60vh;
     background-color: white;
-    text-align:center
+    text-align:left;
+}
+label{
+    display:block;
+    font-size: 0.5em;
+}
+
+.email{
+    line-height: 0.5em;
+    margin-left: 2em;
+    margin-bottom: 0.5em;
+}
+.password{
+    line-height: 0.5em;
+    margin-left: 2em;
+    margin-bottom: 0.5em;
+}
+h4{
+    text-align: center;
+}
+input[type="text"] {
+    width: 20em;
+    height: 3em;
+    border: solid 1px #d3d3d3;
+    border-radius: 15px;
+    background-color: #ededed;
+    padding-left: 0.5em;
+
+}
+input[type="password"] {
+    width: 20em;
+    height: 3em;
+    border: solid 1px #d3d3d3;
+    border-radius: 15px;
+    background-color: #ededed;
+    padding-left: 0.5em;
+
+}
+
+input:focus {
+    outline: none;
 }

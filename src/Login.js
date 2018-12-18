@@ -19,12 +19,10 @@ class Login extends Component {
 
     handleEmailChange(event) {
         this.setState({ email: event.target.value });
-        console.log(this.state.email);
     }
 
     handlePasswordChange(event) {
         this.setState({ password: event.target.value });
-        console.log(this.state.password);
 
     }
     handleSubmit(event) {
@@ -40,14 +38,15 @@ class Login extends Component {
 
 
             <form onSubmit={this.handleSubmit}>
-                <label>
-                    email:
+                <div className="email">
+                <label>Email</label>
                     <input type="text" value={this.state.email} onChange={this.handleEmailChange} /><br />
-                    password:
+                    </div>
+                <div className="password">
+                <label>Password</label>
                     <input type="password" value2={this.state.password} onChange={this.handlePasswordChange} /><br />
-                </label>
                 <input type="submit" value="Login!" /><br />
-
+                </div>
                 <text>
                     Don't have an account?{"\n"}
                     Sign up for one instantly!
