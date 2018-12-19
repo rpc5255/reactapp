@@ -42,7 +42,8 @@ class Login extends Component {
                             <input type="text" value={this.state.email} onChange={this.handleEmailChange}/><br/>
                         </div>
                         <div className="password">
-                            <label>Password</label>
+                            <label>Password
+                                <span><a href="">Forgot?</a></span> </label>
                             <input type="password" value2={this.state.password}
                                    onChange={this.handlePasswordChange}/><br/>
                         </div>

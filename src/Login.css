@@ -21,18 +21,15 @@
     text-align:left;
 }
 label{
-    display:block;
     font-size: 0.5em;
 }
 
 .email{
-    line-height: 0.5em;
-    margin-left: 2em;
+    line-height: 1em;
     margin-bottom: 0.5em;
 }
 .password{
-    line-height: 0.5em;
-    margin-left: 2em;
+    line-height: 1em;
     margin-bottom: 0.5em;
 }
 h4{
@@ -42,21 +39,56 @@ input[type="text"] {
     width: 20em;
     height: 3em;
     border: solid 1px #d3d3d3;
-    border-radius: 15px;
+    border-radius: 5px;
     background-color: #ededed;
     padding-left: 0.5em;
+    box-sizing: border-box;
 
 }
 input[type="password"] {
     width: 20em;
     height: 3em;
     border: solid 1px #d3d3d3;
-    border-radius: 15px;
+    border-radius: 5px;
     background-color: #ededed;
     padding-left: 0.5em;
+    box-sizing: border-box;
 
 }
+input[type="submit"]{
+    width: 20em;
+    border-radius: 5px;
+    background-color: #464646 ;
+    border: solid 1px #191919 ;
+    color: white;
+    padding: 0.6em;
 
+}
 input:focus {
     outline: none;
+}
+form{
+    margin-left:2em;
+    margin-right:2em;
+}
+.signup{
+    font-size:0.5em;
+    text-align:center;
+    color:#7d7d7d;
+    margin-top:4em;
+}
+a:link {
+    color: #7d7d7d;
+}
+a:visited {
+    color: #7d7d7d;
+}
+a:hover {
+    color: #7d7d7d;
+}
+a:active {
+    color: #7d7d7d;
+}
+span{
+    margin-left: 0.75em;
 }
