@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import App from "./App";
 import logo from "./logo.svg";
+import { YearPicker, MonthPicker, DayPicker } from 'react-dropdown-date';
+
+//credits :  https://www.npmjs.com/package/react-dropdown-date  - used this for select population
 
 
 class Sign_up extends Component {
@@ -11,10 +14,11 @@ class Sign_up extends Component {
             password: null,
             name: null,
             month: null,
-            day:null,
-            year : null,
+            day: null,
+            year: null,
             gender: null,
             zipcode: null
+
         };
         //note maybe use drop-down for age
 
@@ -23,11 +27,11 @@ class Sign_up extends Component {
         this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
         this.handleLastNameChange = this.handleLastNameChange.bind(this);
         //month 
-        this.handleMonthChange=this.handleMonthChange.bind(this);
+        this.handleMonthChange = this.handleMonthChange.bind(this);
         //day
-        this.handleDayChange=this.handleDayChange.bind(this);
+        this.handleDayChange = this.handleDayChange.bind(this);
         //yr
-        this.handleYearChange=this.handleDayChange.bind(this);
+        this.handleYearChange = this.handleDayChange.bind(this);
         //note: somewhere later, we have to calculate the user's age and add it to their profile.
         this.handleGenderChange = this.handleGenderChange.bind(this);
         //zip code we need to do some location stuff with it.
@@ -57,11 +61,11 @@ class Sign_up extends Component {
         this.setState({ month: event.target.value });
         console.log(this.state.month);
     }
-    handleDayChange(event){
+    handleDayChange(event) {
         this.setState({ day: event.target.value });
         console.log(this.state.day);
     }
-    handleDayChange(event){
+    handleDayChange(event) {
         this.setState({ year: event.target.value });
         console.log(this.state.year);
     }
@@ -80,7 +84,7 @@ class Sign_up extends Component {
         // have to do condition for invalid age if under 18
         // have to do condition for zipcode
         //password is wrong
-        
+
     }
     render() {
         return (
@@ -92,21 +96,97 @@ class Sign_up extends Component {
                     <input type="text" value={this.state.first_name} onChange={this.handleFirstNameChange} /><br />
                             Last Name:
                     <input type="text" value={this.state.last_name} onChange={this.handleLastNameChange} /><br />
-                            Month: <select id ="month" value={this.state.month} onChange={this.handleMonthChange}></select>
-                            Day: <select id ="day" value={this.state.day} onChange={this.handleDayChange}></select>
-                            Year: <select id ="year" value={this.state.year} onChange={this.handleYearChange}></select><br/>
+                            Month: <MonthPicker
+                                defaultValue={'select month'}
+                                // to get months as numbers
+                                numeric
+                                // default is full name
+                                short
+                                // default is Titlecase
+                                caps
+                                // mandatory if end={} is given in YearPicker
+                                endYearGiven
+                                // mandatory
+                                year={this.state.year}
+                                // default is false
+                                required={true}
+                                // default is false
+                                disabled={false}
+                                // mandatory
+                                value={this.state.month}
+                                // mandatory
+                                onChange={(month) => {
+                                    this.setState({ month });
+                                    console.log(month);
+                                }}
+                                id={'month'}
+                                name={'month'}
+                                classes={'classes'}
+                                optionClasses={'option classes'}
+                            />
+                            {/* <select id="month" value={this.state.month} onChange={this.handleMonthChange}></select> */}
+                            Day:
+                            <DayPicker
+                                defaultValue={'select day'}
+                                // mandatory
+                                year={this.state.year}
+                                // mandatory
+                                month={this.state.month}
+                                // mandatory if end={} is given in YearPicker
+                                endYearGiven
+                                // default is false
+                                required={true}
+                                // default is false
+                                disabled={false}
+                                // mandatory
+                                value={this.state.day}
+                                // mandatory
+                                onChange={(day) => {
+                                    this.setState({ day });
+                                    console.log(day);
+                                }}
+                                id={'day'}
+                                name={'day'}
+                                classes={'classes'}
+                                optionClasses={'option classes'}
+                            /><br/>
+                            {/* <select id="day" value={this.state.day} onChange={this.handleDayChange}></select> */}
+                            Year:<YearPicker
+                                defaultValue={'select year'}
+                                // default is 1900
+                                start={1910}
+                                // default is current year
+                                end={2000}
+                                // default is ASCENDING
+                                reverse
+                                // default is false
+                                required={true}
+                                // default is false
+                                disabled={false}
+                                // mandatory
+                                value={this.state.year}
+                                // mandatory
+                                onChange={(year) => {
+                                    this.setState({ year });
+                                    console.log(year);
+                                }} id={'year'}
+                                name={'year'}
+                                classes={'classes'}
+                                optionClasses={'option classes'}
+                            /><br/>
 
                             Gender:<select id="gender" value={this.state.gender} onChange={this.handleGenderChange}>
                                 <option value="female">Female</option>
                                 <option value="male">Male</option>
-                            </select><br/>
-                            Zipcode : <input type="text" value={this.state.zipcode} onChange = {this.handleZipcodeChange}/><br/>
+                            </select><br />
+                            Zipcode : <input type="text" value={this.state.zipcode} onChange={this.handleZipcodeChange} /><br />
                             email:
                     <input type="text" value={this.state.email} onChange={this.handleEmailChange} /><br />
                             password:
                     <input type="password" value2={this.state.password} onChange={this.handlePasswordChange} /><br />
 
                         </label>
+
                         <input type="submit" value="Sign up now!" /><br />
                     </form>
 
